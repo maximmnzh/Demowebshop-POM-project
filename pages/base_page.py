@@ -32,7 +32,7 @@ class BasePage(object):
         link = self.browser.find_element(*HeadersLocators.ACCOUNT_BUTTON)
         link.click()
 
-    def go_to_change_pwd_page(self):
+    def go_to_change_pass_page(self):
         link = self.browser.find_element(*AccountLocators.CHANGE_PASS_LINK)
         link.click()
 
