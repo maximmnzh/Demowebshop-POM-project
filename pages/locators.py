@@ -29,8 +29,8 @@ class RegisterLocators(object):
 
 class AccountLocators(object):
     CHANGE_PASS_LINK = (By.CSS_SELECTOR, 'li:nth-child(7) .inactive')
-    OLD_PWD_FIELD = (By.CSS_SELECTOR, '#OldPassword')
-    NEW_PWD_FIELD = (By.CSS_SELECTOR, '#NewPassword')
-    NEW_PWD_REPEAT_FIELD = (By.CSS_SELECTOR, '#ConfirmNewPassword')
-    CHANGE_PWD_BUTTON = (By.CSS_SELECTOR, '.change-password-button')
-    CHANGE_PWD_RESULT = (By.CSS_SELECTOR, '.result')
+    OLD_PASS_FIELD = (By.CSS_SELECTOR, '#OldPassword')
+    NEW_PASS_FIELD = (By.CSS_SELECTOR, '#NewPassword')
+    NEW_PASS_REPEAT_FIELD = (By.CSS_SELECTOR, '#ConfirmNewPassword')
+    CHANGE_PASS_BUTTON = (By.CSS_SELECTOR, '.change-password-button')
+    CHANGE_PASS_RESULT = (By.CSS_SELECTOR, '.result')
