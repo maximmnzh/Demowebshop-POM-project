@@ -54,7 +54,7 @@ def test_registration_new_user(browser):  # Проверка регистрац�
     page.should_be_register_result_page()
 
 
-def test_should_be_register_result_page(browser):
+def test_should_be_register_result_page(browser):  # Проверка успешной регистрации
     page = RegisterPage(browser, LinksLocators.REGISTER_PAGE_LINK)
     page.open()
     page.should_be_register_result_page()
