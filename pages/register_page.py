@@ -6,8 +6,6 @@ from .locators import AccountLocators
 
 
 class RegisterPage(BasePage):
-
-    @pytest.mark.smoke
     def should_be_register_field(self):
         assert self.is_element_present(*RegisterLocators.REGISTER_FIELD), 'Register button not present'
 
@@ -25,18 +23,3 @@ class RegisterPage(BasePage):
         self.browser.find_element(*RegisterLocators.CONFIRM_PASSWORD_FIELD).send_keys(password)
         self.browser.find_element(*RegisterLocators.REGISTER_BUTTON).click()
 
-    def log_in(self, email, password):
-        self.browser.find_element(*RegisterLocators.EMAIL_FIELD).send_keys(email)
-        self.browser.find_element(*RegisterLocators.PASSWORD_FIELD).send_keys(password)
-        self.browser.find_element(*RegisterLocators.LOG_IN_BUTTON).click()
-
-    def change_pass(self, old_pass, new_pass):
-        self.browser.find_element(*AccountLocators.OLD_PASS_FIELD).send_keys(old_pass)
-        self.browser.find_element(*AccountLocators.NEW_PASS_FIELD).send_keys(new_pass)
-        self.browser.find_element(*AccountLocators.NEW_PASS_REPEAT_FIELD).send_keys(new_pass)
-        self.browser.find_element(*AccountLocators.CHANGE_PASS_BUTTON).click()
-
-    def should_be_success_pwd_change(self):
-        result_message = self.browser.find_element(*AccountLocators.CHANGE_PASS_RESULT).text
-        print(result_message)
-        assert result_message == "Password was changed", 'result message is not looking good'
