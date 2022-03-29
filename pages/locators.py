@@ -1,8 +1,10 @@
 from selenium.webdriver.common.by import By
 
-MAIN_PAGE_LINK = 'http://demowebshop.tricentis.com'
-REGISTER_PAGE_LINK = 'http://demowebshop.tricentis.com/register'
-CHANGE_PASS_LINK = 'http://demowebshop.tricentis.com/customer/changepassword'
+
+class LinksLocators(object):
+    MAIN_PAGE_LINK = 'http://demowebshop.tricentis.com'
+    REGISTER_PAGE_LINK = 'http://demowebshop.tricentis.com/register'
+    CHANGE_PASS_LINK = 'http://demowebshop.tricentis.com/customer/changepassword'
 
 
 class HeadersLocators(object):
