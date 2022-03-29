@@ -29,7 +29,7 @@ class RegisterPage(BasePage):
     def should_be_register_result_page(self):
         expected_url = 'http://demowebshop.tricentis.com/registerresult/1'
         actual_url = self.browser.current_url
-        assert expected_url == actual_url, 'registration failed: wrong url after registration attempt'
+        assert expected_url == actual_url, 'Registration failed, please try again'
 
     def register_data(self):
         first_name = str(time.time())

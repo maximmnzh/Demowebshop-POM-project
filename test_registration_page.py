@@ -52,3 +52,9 @@ def test_registration_new_user(browser):  # Проверка регистрац�
     first_name, last_name, email, password = page.register_data()
     page.register_new_user(first_name, last_name, email, password)
     page.should_be_register_result_page()
+
+
+def test_should_be_register_result_page(browser):
+    page = RegisterPage(browser, LinksLocators.REGISTER_PAGE_LINK)
+    page.open()
+    page.should_be_register_result_page()
