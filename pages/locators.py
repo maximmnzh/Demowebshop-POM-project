@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 class LinksLocators(object):
     MAIN_PAGE_LINK = 'http://demowebshop.tricentis.com'
     REGISTER_PAGE_LINK = 'http://demowebshop.tricentis.com/register'
+    LOGIN_PAGE_LINK = "http://demowebshop.tricentis.com/login"
     CHANGE_PASS_LINK = 'http://demowebshop.tricentis.com/customer/changepassword'
 
 
@@ -17,7 +18,6 @@ class HeadersLocators(object):
 
 
 class RegisterLocators(object):
-    REGISTER_FIELD = (By.CSS_SELECTOR, '.center-2')
     MALE_RADIOBUTTON = (By.CSS_SELECTOR, '#gender-male')
     FEMALE_RADIOBUTTON = (By.CSS_SELECTOR, '#gender-female')
     FIRSTNAME_FIELD = (By.CSS_SELECTOR, '#FirstName')
@@ -26,7 +26,12 @@ class RegisterLocators(object):
     PASSWORD_FIELD = (By.CSS_SELECTOR, '#Password')
     CONFIRM_PASSWORD_FIELD = (By.CSS_SELECTOR, '#ConfirmPassword')
     REGISTER_BUTTON = (By.CSS_SELECTOR, '#register-button')
-    LOG_IN_BUTTON = (By.CSS_SELECTOR, '.login-button')
+
+
+class LoginLocators(object):
+    EMAIL_FIELD = (By.CSS_SELECTOR, '#Email')
+    PASSWORD_FIELD = (By.CSS_SELECTOR, '#Password')
+    LOGIN_BUTTON = (By.CSS_SELECTOR, '.login-button')
 
 
 class AccountLocators(object):
