@@ -1,9 +1,8 @@
-from .base_page import BasePage
-from .locators import HeadersLocators
+from base_page import BasePage
+from locators import HeadersLocators
 
 
 class MainPage(BasePage):
-
     def should_be_register_button(self):
         assert self.is_element_present(*HeadersLocators.REGISTER_BUTTON), 'Register button not present'
 
