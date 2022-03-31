@@ -20,6 +20,7 @@ def browser(request):
         options.headless = True
         print("\nstart chrome browser for test..")
         browser = webdriver.Chrome(options=options)
+
     elif browser_name == "firefox":
         os.environ['MOZ_HEADLESS'] = '1'
         binary = FirefoxBinary('C:\\Program Files\\Mozilla Firefox\\firefox.exe', log_file=sys.stdout)
