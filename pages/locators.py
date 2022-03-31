@@ -34,10 +34,10 @@ class LoginLocators(object):
     LOGIN_BUTTON = (By.CSS_SELECTOR, '.login-button')
 
 
-class AccountLocators(object):
+class CustomerLocators(object):
     CHANGE_PASS_LINK = (By.CSS_SELECTOR, 'li:nth-child(7) .inactive')
     OLD_PASS_FIELD = (By.CSS_SELECTOR, '#OldPassword')
     NEW_PASS_FIELD = (By.CSS_SELECTOR, '#NewPassword')
-    NEW_PASS_REPEAT_FIELD = (By.CSS_SELECTOR, '#ConfirmNewPassword')
+    CONFIRM_PASS_FIELD = (By.CSS_SELECTOR, '#ConfirmNewPassword')
     CHANGE_PASS_BUTTON = (By.CSS_SELECTOR, '.change-password-button')
     CHANGE_PASS_RESULT = (By.CSS_SELECTOR, '.result')

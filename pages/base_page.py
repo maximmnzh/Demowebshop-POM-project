@@ -1,8 +1,5 @@
 from selenium.common.exceptions import NoSuchElementException
 
-from pages.locators import AccountLocators
-from pages.locators import HeadersLocators
-
 
 class BasePage(object):
 
@@ -20,23 +17,3 @@ class BasePage(object):
         except NoSuchElementException:
             return False
         return True
-
-    def go_to_login_page(self):
-        link = self.browser.find_element(*HeadersLocators.LOGIN_LINK)
-        link.click()
-
-    def go_to_account_page(self):
-        link = self.browser.find_element(*HeadersLocators.ACCOUNT_BUTTON)
-        link.click()
-
-    def go_to_change_pass_page(self):
-        link = self.browser.find_element(*AccountLocators.CHANGE_PASS_LINK)
-        link.click()
-
-    def log_out(self):
-        link = self.browser.find_element(*HeadersLocators.LOG_OUT_LINK)
-        link.click()
-
-    def should_be_login_link(self):
-        assert self.is_element_present(*HeadersLocators.LOG_OUT_LINK), (
-            "Login link is not presented")
