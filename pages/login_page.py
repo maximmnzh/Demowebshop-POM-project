@@ -40,7 +40,6 @@ class LoginPage(BasePage):
 
 
 
-
 ('\n'
  'def test_login_existing_user(browser):\n'
  '    page = RegisterPage(browser, LinksLocators.MAIN_PAGE_LINK)\n'
