@@ -1,10 +1,7 @@
-import math
-
 from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.support.wait import WebDriverWait
 
-from .locators import AccountLocators
-from .locators import HeadersLocators
+from pages.locators import AccountLocators
+from pages.locators import HeadersLocators
 
 
 class BasePage(object):

@@ -1,7 +1,9 @@
 import pytest
 from pages.locators import LinksLocators
 from pages.login_page import LoginPage
-from pages.register_page import RegisterPage
+
+email = 'test111222@test111222.com'
+password = 'test111'
 
 
 @pytest.mark.smoke
@@ -26,6 +28,11 @@ def test_should_be_login_button(browser):  # Проверка есть ли кн
 def test_login(browser):  # Проверка логина
     page = LoginPage(browser, LinksLocators.LOGIN_PAGE_LINK)
     page.open()
-    first_name, last_name, email, password = page.register_data()
     page.login(email, password)
+    page.should_be_login_result_page()
+
+
+def test_should_be_login_result_page(browser):  # Проверка успешного логина
+    page = LoginPage(browser, LinksLocators.LOGIN_PAGE_LINK)
+    page.open()
     page.should_be_login_result_page()
