@@ -31,7 +31,8 @@ class RegisterPage(BasePage):
         actual_url = self.browser.current_url
         assert expected_url == actual_url, 'Registration failed, please try again'
 
-    def register_data(self):
+    @staticmethod
+    def register_dataset():
         first_name = str(time.time())
         last_name = str(time.time())
         email = str(time.time()) + "@mail.com"
