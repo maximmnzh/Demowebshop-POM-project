@@ -1,5 +1,5 @@
 import time
-from pages.locators import RegisterLocators
+from pages.locators import RegisterLocators, HeadersLocators
 from pages.base_page import BasePage
 
 
@@ -30,6 +30,9 @@ class RegisterPage(BasePage):
         expected_url = 'http://demowebshop.tricentis.com/registerresult/1'
         actual_url = self.browser.current_url
         assert expected_url == actual_url, 'Registration failed, please try again'
+
+    def log_out(self):
+        self.browser.find_element(*HeadersLocators.LOG_OUT_LINK).click()
 
     @staticmethod
     def register_dataset():
