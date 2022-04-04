@@ -3,7 +3,6 @@ from pages.locators import LinksLocators
 from pages.main_page import MainPage
 
 
-@pytest.mark.smoke
 @pytest.mark.fields
 class TestMainPageLinks:
     def test_should_be_basic_links(self, browser):
