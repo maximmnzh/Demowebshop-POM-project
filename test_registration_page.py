@@ -1,6 +1,7 @@
 import pytest
 from pages.locators import LinksLocators
 from pages.register_page import RegisterPage
+from pages.dataset import register_dataset
 
 
 @pytest.mark.fields
@@ -46,6 +47,6 @@ class TestRegistrationNewUser:
     def test_registration_new_user(self, browser):  # Проверка регистрации и подтверждения регистрации
         page = RegisterPage(browser, LinksLocators.REGISTER_PAGE_LINK)
         page.open()
-        first_name, last_name, email, password = page.register_dataset()
+        first_name, last_name, email, password = register_dataset()
         page.register_new_user(first_name, last_name, email, password)
         page.should_be_register_result_page()

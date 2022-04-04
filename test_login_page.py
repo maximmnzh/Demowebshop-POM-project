@@ -2,6 +2,7 @@ import pytest
 from pages.locators import LinksLocators
 from pages.login_page import LoginPage
 from pages.register_page import RegisterPage
+from pages.dataset import TestDatasets, register_dataset
 
 
 @pytest.mark.fields
@@ -27,7 +28,7 @@ class TestLogin:
     def test_login(self, browser):  # Проверка логина на готовых данных
         page = LoginPage(browser, LinksLocators.LOGIN_PAGE_LINK)
         page.open()
-        page.login(email="test111222@test111222.com", password="test123")
+        page.login(email=TestDatasets.email, password=TestDatasets.password)
         page.should_be_login_result_page()
 
 
@@ -37,7 +38,7 @@ class TestLoginAfterRegistration:  # Проверка логина на новы
     def setup(self, browser):
         page = RegisterPage(browser, LinksLocators.REGISTER_PAGE_LINK)
         page.open()
-        first_name, last_name, email, password = page.register_dataset()
+        first_name, last_name, email, password = register_dataset()
         page.register_new_user(first_name, last_name, email, password)
         page.should_be_register_result_page()
         page.log_out()
