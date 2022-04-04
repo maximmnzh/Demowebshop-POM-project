@@ -1,4 +1,3 @@
-import time
 from pages.locators import RegisterLocators, HeadersLocators
 from pages.base_page import BasePage
 
@@ -33,14 +32,6 @@ class RegisterPage(BasePage):
 
     def log_out(self):
         self.browser.find_element(*HeadersLocators.LOG_OUT_LINK).click()
-
-    @staticmethod
-    def register_dataset():
-        first_name = str(time.time())
-        last_name = str(time.time())
-        email = str(time.time()) + "@mail.com"
-        password = "testtest"
-        return first_name, last_name, email, password
 
     def register_new_user(self, first_name, last_name, email, password):
         self.browser.find_element(*RegisterLocators.MALE_RADIOBUTTON).click()
