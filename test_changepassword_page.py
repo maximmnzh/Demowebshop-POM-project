@@ -5,7 +5,7 @@ from pages.login_page import LoginPage
 from pages.register_page import RegisterPage
 
 
-class TestLoginAfterRegistration:
+class TestChangePasswordPage:
     @pytest.fixture(autouse=True)
     def setup(self, browser):
         page = RegisterPage(browser, LinksLocators.REGISTER_PAGE_LINK)
@@ -13,6 +13,7 @@ class TestLoginAfterRegistration:
         first_name, last_name, email, password = page.register_dataset()
         page.register_new_user(first_name, last_name, email, password)
         page.should_be_register_result_page()
+        page.log_out()
         return email, password
 
     @pytest.mark.smoke
