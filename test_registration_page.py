@@ -42,9 +42,10 @@ class TestRegistrationPageFields:
 
 
 @pytest.mark.smoke
-def test_registration_new_user(browser):  # Проверка регистрации и подтверждения регистрации
-    page = RegisterPage(browser, LinksLocators.REGISTER_PAGE_LINK)
-    page.open()
-    first_name, last_name, email, password = page.register_dataset()
-    page.register_new_user(first_name, last_name, email, password)
-    page.should_be_register_result_page()
+class TestRegistrationNewUser:
+    def test_registration_new_user(self, browser):  # Проверка регистрации и подтверждения регистрации
+        page = RegisterPage(browser, LinksLocators.REGISTER_PAGE_LINK)
+        page.open()
+        first_name, last_name, email, password = page.register_dataset()
+        page.register_new_user(first_name, last_name, email, password)
+        page.should_be_register_result_page()
