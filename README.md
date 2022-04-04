@@ -21,6 +21,8 @@
     + Собрать проверки, используя @pytest.mark
 
 ### PS:
-+ Запуск через терминал: pytest -v -s --tb=line --browser_name=chrome
++ Запуск через терминал: pytest -v -s --tb=line
 + При необходимости выбора метки: -m smoke / -m fields
++ Выбор браузера: --browser_name=Chrome / --browser_name=Firefox
++ При необходимости выбора режима: --headless=True / --headless=False
 
