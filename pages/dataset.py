@@ -13,3 +13,8 @@ class TestDatasets:
     email = "test111222@test111222.com"
     password = "test123"
     new_password = "test1234"
+    city = "aoc"
+    address1 = "aoc1"
+    zip_code = "123123"
+    phone = "12312312311"
+

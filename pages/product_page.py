@@ -1,5 +1,9 @@
+import time
+
 from pages.locators import ItemsPageLocators, HeadersLocators
 from pages.base_page import BasePage
+from selenium.webdriver.support.ui import Select
+from pages.dataset import TestDatasets
 
 
 class ProductPage(BasePage):
@@ -35,3 +39,44 @@ class ProductPage(BasePage):
 
     def press_go_to_cart_button(self):
         self.browser.find_element(*HeadersLocators.CART_LINK).click()
+
+    def press_to_agree_checkbox(self):
+        self.browser.find_element(*ItemsPageLocators.AGREE_CHECKBOX).click()
+
+    def press_to_checkout_button(self):
+        self.browser.find_element(*ItemsPageLocators.CHECKOUT_BUTTON).click()
+
+    def making_order(self):
+        select = Select(self.browser.find_element_by_tag_name("select"))
+        select.select_by_value("66")
+        time.sleep(1)
+        self.browser.find_element(*ItemsPageLocators.CITY_ORDER_FIELD).send_keys(TestDatasets.city)
+        time.sleep(1)
+        self.browser.find_element(*ItemsPageLocators.ADDRESS1_ORDER_FIELD).send_keys(TestDatasets.address1)
+        time.sleep(1)
+        self.browser.find_element(*ItemsPageLocators.ZIP_CODE_ORDER_FIELD).send_keys(TestDatasets.zip_code)
+        time.sleep(1)
+        self.browser.find_element(*ItemsPageLocators.PHONE_ORDER_FIELD).send_keys(TestDatasets.phone)
+        time.sleep(1)
+        self.browser.find_element(*ItemsPageLocators.NEW_ADDRESS_CONTINUE_BUTTON).click()
+        time.sleep(1)
+        self.browser.find_element(*ItemsPageLocators.PICKUP_CHECKBOX).click()
+        time.sleep(1)
+        self.browser.find_element(*ItemsPageLocators.SHIPPING_ADDRESS_CONTINUE_BUTTON).click()
+        time.sleep(1)
+        self.browser.find_element(*ItemsPageLocators.SHIPPING_METHOD_RADIOBUTTON).click()
+        time.sleep(1)
+        self.browser.find_element(*ItemsPageLocators.SHIPPING_CONTINUE_BUTTON).click()
+        time.sleep(1)
+        self.browser.find_element(*ItemsPageLocators.PAYMENT_METHOD_RADIOBUTTON).click()
+        time.sleep(1)
+        self.browser.find_element(*ItemsPageLocators.NEW_ADDRESS_CONTINUE_BUTTON).click()
+        time.sleep(1)
+        self.browser.find_element(*ItemsPageLocators.PAYMENT_CONTINUE_BUTTON).click()
+        time.sleep(1)
+        self.browser.find_element(*ItemsPageLocators.CONFIRM_ORDER_BUTTON).click()
+
+    def should_be_confirm_order_result_page(self):
+        expected_url = 'http://demowebshop.tricentis.com/checkout/completed/'
+        actual_url = self.browser.current_url
+        assert expected_url == actual_url, 'Confirm order failed, please try again'
