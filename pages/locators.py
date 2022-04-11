@@ -6,6 +6,8 @@ class LinksLocators(object):
     REGISTER_PAGE_LINK = 'http://demowebshop.tricentis.com/register'
     LOGIN_PAGE_LINK = "http://demowebshop.tricentis.com/login"
     CHANGE_PASS_LINK = 'http://demowebshop.tricentis.com/customer/changepassword'
+    BOOKS_HEALTH_ITEM_LINK = 'http://demowebshop.tricentis.com/health'
+    BOOKS_LINK = 'http://demowebshop.tricentis.com/books'
 
 
 class HeadersLocators(object):
@@ -41,3 +43,9 @@ class CustomerLocators(object):
     CONFIRM_PASS_FIELD = (By.CSS_SELECTOR, '#ConfirmNewPassword')
     CHANGE_PASS_BUTTON = (By.CSS_SELECTOR, '.change-password-button')
     CHANGE_PASS_RESULT = (By.CSS_SELECTOR, '.result')
+
+
+class ItemsPageLocators(object):
+    ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, '#add-to-cart-button-22')
+    ADD_TO_WISHLIST_BUTTON = (By.CSS_SELECTOR, '#add-to-wishlist-button-22')
+    SUCCESS_ADDING_MASSAGE = (By.CSS_SELECTOR, '.success')
