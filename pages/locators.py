@@ -49,3 +49,4 @@ class ItemsPageLocators(object):
     ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, '#add-to-cart-button-22')
     ADD_TO_WISHLIST_BUTTON = (By.CSS_SELECTOR, '#add-to-wishlist-button-22')
     SUCCESS_ADDING_MASSAGE = (By.CSS_SELECTOR, '.success')
+    ADD_TO_CART_FROM_ALL_PRODUCT = (By.CSS_SELECTOR, '.product-box-add-to-cart-button')

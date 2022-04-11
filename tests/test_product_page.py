@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from pages.locators import LinksLocators, ItemsPageLocators
 from pages.product_page import ProductPage
@@ -27,4 +29,10 @@ class TestAddingItemToCart:
         page = ProductPage(browser, LinksLocators.BOOKS_HEALTH_ITEM_LINK)
         page.open()
         page.press_button_add_to_cart()
+        page.should_be_success_adding_massage()
+
+    def test_adding_item_from_all_product(self, browser):
+        page = ProductPage(browser, LinksLocators.BOOKS_LINK)
+        page.open()
+        page.press_button_add_from_all_books()
         page.should_be_success_adding_massage()

@@ -21,3 +21,6 @@ class ProductPage(BasePage):
 
     def press_button_add_to_cart(self):
         self.browser.find_element(*ItemsPageLocators.ADD_TO_CART_BUTTON).click()
+
+    def press_button_add_from_all_books(self):
+        self.browser.find_element(*ItemsPageLocators.ADD_TO_CART_FROM_ALL_PRODUCT).click()
