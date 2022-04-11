@@ -1,8 +1,6 @@
-import time
-
 import pytest
 
-from pages.dataset import TestDatasets, register_dataset
+from pages.dataset import register_dataset
 from pages.locators import LinksLocators
 from pages.login_page import LoginPage
 from pages.product_page import ProductPage
@@ -51,7 +49,7 @@ class TestAddingItemToCart:
         page.press_update_cart_button()
 
 
-@pytest.mark.smoke1
+@pytest.mark.smoke
 class TestCheckoutOrder:
     @pytest.fixture(autouse=True)
     def setup(self, browser):
@@ -63,7 +61,7 @@ class TestCheckoutOrder:
         page.log_out()
         return email, password
 
-    def test_checkout_order_with_login(self, browser, setup):  # Проверка оформления заказа и логина на готовых данных
+    def test_checkout_order_with_login(self, browser, setup):  # Проверка оформления заказа и логина на новых данных
         page = LoginPage(browser, LinksLocators.LOGIN_PAGE_LINK)
         page.open()
         page.login(email=setup[0], password=setup[1])
@@ -77,7 +75,6 @@ class TestCheckoutOrder:
         page.press_update_cart_button()
         page.press_to_agree_checkbox()
         page.press_to_checkout_button()
-        time.sleep(2)
         page.making_order()
         page.should_be_confirm_order_result_page()
 

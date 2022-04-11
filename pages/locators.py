@@ -37,7 +37,6 @@ class LoginLocators(object):
 
 
 class CustomerLocators(object):
-    CHANGE_PASS_LINK = (By.CSS_SELECTOR, 'li:nth-child(7) .inactive')
     OLD_PASS_FIELD = (By.CSS_SELECTOR, '#OldPassword')
     NEW_PASS_FIELD = (By.CSS_SELECTOR, '#NewPassword')
     CONFIRM_PASS_FIELD = (By.CSS_SELECTOR, '#ConfirmNewPassword')
@@ -47,12 +46,10 @@ class CustomerLocators(object):
 
 class ItemsPageLocators(object):
     ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, '#add-to-cart-button-22')
-    ADD_TO_WISHLIST_BUTTON = (By.CSS_SELECTOR, '#add-to-wishlist-button-22')
     SUCCESS_ADDING_MASSAGE = (By.CSS_SELECTOR, '.success')
     ADD_TO_CART_FROM_ALL_PRODUCT = (By.CSS_SELECTOR, '.product-box-add-to-cart-button')
     QUANTITY_ITEMS_FIELD = (By.CSS_SELECTOR, '.qty-input')
     UPDATE_CART_BUTTON = (By.CSS_SELECTOR, '.update-cart-button')
-    TOTAL_ORDER_PRICE_FIELD = (By.CSS_SELECTOR, '.order-total')
     AGREE_CHECKBOX = (By.CSS_SELECTOR, '#termsofservice')
     CHECKOUT_BUTTON = (By.CSS_SELECTOR, '#checkout')
     CITY_ORDER_FIELD = (By.CSS_SELECTOR, '#BillingNewAddress_City')
@@ -60,10 +57,9 @@ class ItemsPageLocators(object):
     ZIP_CODE_ORDER_FIELD = (By.CSS_SELECTOR, '#BillingNewAddress_ZipPostalCode')
     PHONE_ORDER_FIELD = (By.CSS_SELECTOR, '#BillingNewAddress_PhoneNumber')
     NEW_ADDRESS_CONTINUE_BUTTON = (By.CSS_SELECTOR, '.new-address-next-step-button')
-    SHIPPING_ADDRESS_CONTINUE_BUTTON = (By.CSS_SELECTOR, '[title="Continue"]')
-    SHIPPING_CONTINUE_BUTTON = (By.CSS_SELECTOR, '.shipping-method-next-step-button')
-    PAYMENT_CONTINUE_BUTTON = (By.CSS_SELECTOR, '.payment-info-next-step-button')
+    SHIPPING_ADDRESS_CONTINUE_BUTTON = (By.CSS_SELECTOR, '[onclick="Shipping.save()"]')
     CONFIRM_ORDER_BUTTON = (By.CSS_SELECTOR, '.confirm-order-next-step-button')
-    SHIPPING_METHOD_RADIOBUTTON = (By.CSS_SELECTOR, '#shippingoption_2')
     PAYMENT_METHOD_RADIOBUTTON = (By.CSS_SELECTOR, '#paymentmethod_1')
+    PAYMENT_CONTINUE_BUTTON = (By.CSS_SELECTOR, '[onclick="PaymentMethod.save()"]')
+    PAYMENT_INFO_CONTINUE_BUTTON = (By.CSS_SELECTOR, '[onclick="PaymentInfo.save()"]')
     PICKUP_CHECKBOX = (By.CSS_SELECTOR, '#PickUpInStore')
